@@ -20,7 +20,7 @@ body {
 }
 #header {	
 	overflow:hidden;
-	background:url(../Images/radar-header-bg.jpg) left top repeat-x;
+	background:url(../images/radar-header-bg.jpg) left top repeat-x;
 	height:100px;
 	justify-content: center;
     align-items: center;
@@ -64,12 +64,12 @@ body {
 }
 
 #filter #filterButtons a#filterSelect {
-	background:url(../Images/no-filter-icn-btn.png) 0 0 no-repeat;
+	background:url(../images/no-filter-icn-btn.png) 0 0 no-repeat;
 	width:34px;
 }
 
 #filter a#filterBtn {
-	background:url(../Images/filter-btn.png) 0 0 no-repeat;
+	background:url(../images/filter-btn.png) 0 0 no-repeat;
 	width:111px;
 	margin-left:7px;
 }
@@ -98,7 +98,7 @@ body {
 	width:153px;	
 }
 #accordion h3 a {
-	background: url("../Images/accordion-title-bg.jpg") repeat-x scroll 0 -46px transparent;
+	background: url("../images/accordion-title-bg.jpg") repeat-x scroll 0 -46px transparent;
 	color: #707070;
 	display: block;
 	font: bold 11px/23px Verdana,Geneva,sans-serif;
@@ -175,7 +175,7 @@ body {
 .selectAll {
 	display:block;
 	height:25px; 
-	background:url(../Images/select-all-bg.gif) left top repeat-x;
+	background:url(../images/select-all-bg.gif) left top repeat-x;
 	padding-left:30px;
 	line-height:22px;
 	color:#000;
