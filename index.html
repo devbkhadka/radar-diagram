@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>    
+    <title>Radar Diagram</title>
+    <link href="css/styles.css" type="text/css" rel="stylesheet" />
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+    <link type="text/css" href="scripts/jquery_slider/css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />	
+    <link href="css/radar-diehl-styles.css" rel="stylesheet" type="text/css" />
+    <link href="scripts/shadowbox-3.0.3/shadowbox.css" rel="stylesheet" type="text/css" />
+   
+
+    <script type="text/javascript" src="scripts/jquery_slider/js/jquery-1.6.2.min.js"></script>     
+    <script type="text/javascript" src="scripts/kinetic-v1.0.0.js"></script>
+    <script type="text/javascript" src="scripts/RadarDiagram.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+	<script type="text/javascript" src="scripts/jquery.ThreeDots.js"></script>
+    <script type="text/javascript" src="scripts/draggable/darggable.js" ></script>
+    <script type="text/javascript" src="scripts/twispy/twispy.js" ></script>
+    <script type="text/javascript" src="scripts/CFInstall.min.js"></script>    
+   <!--[if lt IE 9]>
+        <script type="text/javascript" src="scripts/flashcanvas_pro/flashcanvas.js"></script>
+    <![endif]--> 
+
+
+    <script src="scripts/shadowbox-3.0.3/shadowbox.js" type="text/javascript"></script>
+    
+
+    <script type="text/javascript">
+        var indx = 1;
+        var radDiag;
+        $jq = $;
+
+        Shadowbox.init({
+            // let's skip the automatic setup because we don't have any
+            // properly configured link elements on the page
+            skipSetup: true
+        });
+
+        function loadRadarDiagram() {
+            radDiag = new RadarDiagram("myCanvas", "HistorySlider", "", "xml/NoMasterSeg.xml");
+            radDiag.setLoadListners(xmlLoading, xmlLoaded);
+            var dates = new Array(new Date(2011, 3, 20), new Date(2011, 2, 11), new Date(2011, 8, 5), new Date(2011, 5, 9), new Date(2011, 11, 7), new Date(2011, 2, 29), new Date(2011, 1, 18)
+                                  , new Date(2011, 6, 28), new Date(2011, 3, 17), new Date(2012, 1, 19), new Date(2012, 1, 27), new Date(2011, 11, 29));
+            var strDates = '';
+            for (var i = 0; i < dates.length; i++) {
+                strDates += ', ' + (dates[i].getTime()/1000);
+            }
+            //$("#msgDiv").text(strDates);
+           
+        }
+
+       
+        function xmlLoading() {
+            $("#divLoading").show();
+        }
+        function xmlLoaded() {
+            $("#divLoading").fadeOut('slow');
+        }
+
+        window.onload = loadRadarDiagram;
+
+        $(document).ready(function () {
+            $("#btnExport").click(function () {
+                var canvas = document.getElementById("myCanvas");
+                // save canvas image as data url (png format by default)
+                var dataURL = canvas.toDataURL();
+
+                // set canvasImg image src to dataURL
+                // so it can be saved as an image
+                var img = $("<img/>").each(function () {
+                    this.src = dataURL;
+                    Shadowbox.open({
+                        content: this.outerHTML,
+                        player: "html",
+                        title: "Save the image below",
+                        width: 1200,
+                        height: 700
+                    });
+                   
+                });
+
+              
+               
+
+            });
+        });
+        	
+    </script>
+</head>
+<body>
+  
+    <div id="header">
+        <h1>Radar Diagram</h1> 
+    </div>
+    <div id="contents">  
+        
+        <div id="DiagramHolder" style="position:relative"> 
+             
+            <div id="radarLegends">
+	        <h3>Status</h3>
+	            <ul>
+	                <li class="size-status4">Created</li>	    
+	                <li class="size-status3">5-Star-Rating</li>
+	                <li class="size-status2">Portfolio-Evaluation</li>
+	                <li class="size-status1">Finalized</li>	   
+	            </ul>
+            </div>     
+              
+            <canvas id="myCanvas" height="600" width="1000"> </canvas>
+            
+            <div id="RadarDiagPopup">
+            </div>
+            <div id="PlotOption">
+            </div>
+            <div id="divLoading">
+            </div>
+        </div>
+
+        <!-- Filter -->
+        <div id="filter">
+            <div id="filterButtons">
+                <a href="#" id="filterSelect">Filter Select</a> <a href="#" id="filterBtn">Filter</a>
+            </div>
+           <input type="button" id="btnExport" value="Export"/>
+            
+        </div>
+        <!-- .Filter -->       
+    </div>
+    
+    <div id="msgDiv">
+    </div>
+</body>
+</html>

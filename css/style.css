@@ -1,0 +1,279 @@
+@charset "utf-8";
+/* 
+----------------------------------------------------------------
+[Table of contents]
+
+ 0.Reset
+ 1.Global
+ 2.Layout
+ 3.Main
+ 4.Sidebars
+ 5.Header
+ 6.Navigation
+ 7.Nodes
+ 8.Comments
+ 9.Blocks
+10.Footer
+11.CSS Support
+12.Advanced
+13.Panels
+14.WEF Specific
+15.Radar Specific
+
+[Font sizes - based on 75%/12px body]
+36px = 3em
+30px = 2.5em
+24px = 2em
+18px = 1.5em
+16px = 1.333333em
+14px = 1.1667em
+12px = 1em
+11px = .9167em
+10px = .8333em
+
+Equasion for font sizing: 
+-Desired in px ÷ Default (or parent) in px = sizing in em
+
+----------------------------------------------------------------*/
+
+/**********************************************************************************
+ * 0.RESET 
+ *********************************************************************************/
+@import "reset.css";
+
+/**********************************************************************************
+ * 1.GLOBAL
+ *********************************************************************************/
+
+body {
+	font: normal 12px Arial, Helvetica, sans-serif;
+	color:#363636;
+	background:#5E6E7D;
+}
+body.cke_show_borders { background:#fff; }
+
+a:link, a:visited {
+	color:#2c95d0;
+	text-decoration:none;
+}
+a:hover { text-decoration:underline; }
+
+.col, .col2, .col3, .col4, .col5 {
+	float:left;
+	margin-right:20px;
+}
+.col { width:172px; }
+.col2 { width:364px; }
+.col3 { width:556px; }
+.col4 { width:748px; }
+.col5 {
+	width:940px;
+	margin:0;
+}
+
+.last { margin-right:0; }
+.spriteBg { background:url(images/main-layout-sprite.png) no-repeat; }
+
+
+/**********************************************************************************
+	HEADER
+ *********************************************************************************/
+#header { }
+#header #logo {
+	background-position:-460px 0;
+	cursor: pointer;
+	display: block;
+	height: 88px;
+	margin-top: 15px;
+	position: relative;
+	text-indent: -9999px;
+	width:140px;
+}
+#header #logo h1, #header #logo h1 a {
+	text-indent:-9999px;
+	overflow:hidden;
+	width:140px;
+	height:88px;
+	margin:0;
+	padding:0;
+	float:left;
+}
+
+#header #siteName h2 {
+	font:normal 1.67em/1em Weforum-Helvetica, Arial, Helvetica, sans-serif;
+	line-height:1em;
+	text-transform:uppercase;
+	margin-top:25px;
+	margin-right:52px;
+	text-align:right;
+}
+
+/**********************************************************************************
+		FOOTER
+ *********************************************************************************/
+#footer {
+	width:940px;
+	margin:20px auto 0 auto;
+	overflow:hidden;
+	padding:0 20px 10px 20px;
+	color:#fff;
+}
+#footer h2 {
+	border-bottom: 1px solid #FFFFFF;
+	font-size: 13px;
+	font-weight:bold;
+	margin: 0 0 5px;
+	padding-bottom: 3px;
+}
+#footer .content {
+	padding-top:5px;
+	font-size:11px;
+	line-height:18px;
+}
+#footer .content p { padding-bottom:15px; }
+#footer h2 span {
+	border-bottom: 2px solid #FFFFFF;
+	padding-bottom: 4px;
+}
+#footer ul, #footer ul li {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+#footer ul.social-links {
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+}
+#footer ul.social-links li { float: left; }
+#footer ul.social-links a {
+	display: block;
+	height: 20px;
+	margin: 0 18px 0 0;
+}
+#footer-region a:link, #footer-region a:visited { color: #F0F0F0; }
+#footer .social-links a.ico-facebook {
+	background-position: -219px 0;
+	width: 18px;
+}
+#footer .social-links a.ico-facebook:hover { background-position: -219px -20px; }
+#footer .social-links a.ico-youtube {
+	background-position:-140px 0;
+	width: 17px;
+}
+#footer .social-links a.ico-youtube:hover { background-position:-140px -20px; }
+#footer .social-links a.ico-flickr {
+	background-position: -158px 0;
+	width: 26px;
+}
+#footer .social-links a.ico-flickr:hover { background-position: -158px -20px; }
+#footer .social-links a.ico-scribd {
+	background-position:-183px 0;
+	width: 18px;
+}
+#footer .social-links a.ico-scribd:hover { background-position:-183px -20px; }
+#footer .social-links a.ico-forumblog {
+	background-position:-202px 0;
+	margin: 0;
+	width: 18px;
+}
+#footer .social-links a.ico-forumblog:hover { background-position:-202px -20px; }
+#footer .mobileApps { margin-top:25px; }
+#footer .mobileApps a {
+	display: inline;
+	float: left;
+	margin-right: 8px;
+	margin-top: 8px;
+}
+#footer a.feed-icon {
+	position: absolute;
+	right: 0;
+	top: 1.416667em;
+}
+/* support drupal */
+#footer #block-system-0 {
+	position: absolute;
+	right: 25px;
+	top: 1.5em;
+}
+
+
+/*********************************************************************************
+	RADAR Specific
+*********************************************************************************/
+
+body.radarSpecific {
+	background:url(images/bg-main.png) left top repeat;
+}
+#radarHeader,
+#radarWrapper,
+#radarFooter {
+	width:100%;
+	float:left;
+	position:relative;
+}
+
+#radarHeader {
+	height:112px;
+	border-bottom:22px solid #ddd;
+}
+
+#radarHeader #header {
+	width:940px;
+	height:112px;
+	margin:0 auto;
+	padding:0 20px;
+}
+#radarHeader #header #logo,
+#radarHeader #header #logo h1,
+#radarHeader #header #logo h1 a {
+	width:121px;
+	height:75px;
+	position:static;
+}
+#radarHeader #header #logo {
+	background:url(images/logo-white.png) 0 0 no-repeat;
+
+}
+
+#radarHeader #header #siteName h2 {
+	color:#fff;
+	margin:60px 0 0 0;
+}
+
+#radarWrapper {
+	background:#fff;
+	text-align:center;
+}
+
+#radarWrapper #riskName,
+#radarWrapper #riskLegends{
+	position:absolute;
+	top:45px;
+}
+
+#radarWrapper #riskName {
+	left:40px;
+}
+
+#radarWrapper #riskName h2 {
+	font-size:20px;
+	color:#555;
+	padding-bottom:10px;
+	border-bottom:3px solid #555;
+	text-transform:uppercase;
+}
+
+#radarWrapper #riskName h2 span {
+	font-weight:bold;
+}
+
+#radarWrapper #riskLegends {
+	background:url(images/legend.png) 0 0 no-repeat;
+	width:160px;
+	height:190px;
+	right:40px;
+}
+#radarFooter {
+	border-top:22px solid #ddd;
+}

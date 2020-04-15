@@ -1,0 +1,360 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	background:#ecedf2;
+	font:normal 11px Arial, Helvetica, sans-serif;
+}
+#divLoading {
+	position:absolute; 
+	top:0; 
+	left:0; 
+	width:100%; 
+	height:100%; 
+	background:rgba(255,255,255,0.9) url('../images/preloader.gif') center center no-repeat;
+	display:block;
+}
+#header {	
+	overflow:hidden;
+	background:url(../Images/radar-header-bg.jpg) left top repeat-x;
+	height:100px;
+	justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+#contents { position:relative; }
+
+#DiagramHolder {
+	width:1100px;
+	margin:0 auto;
+	
+}
+
+/*---------------------------------------------------
+	filters
+----------------------------------------------------*/
+
+#filter {
+	position:absolute;
+	width:162px;
+	top:20px;
+	left:20px;
+	z-index:999;
+}
+
+#filter #filterButtons {
+	float:left;
+	width:162px;
+	padding:10px 0;
+	height:21px;
+	overflow:hidden;
+}
+
+#filter #filterButtons a{
+	float:left;
+	height:21px;
+	text-indent:-2000px;
+	overflow:hidden;
+}
+
+#filter #filterButtons a#filterSelect {
+	background:url(../Images/no-filter-icn-btn.png) 0 0 no-repeat;
+	width:34px;
+}
+
+#filter a#filterBtn {
+	background:url(../Images/filter-btn.png) 0 0 no-repeat;
+	width:111px;
+	margin-left:7px;
+}
+
+#filter #filterButtons a#filterSelect:hover {background-position: 0 -44px; adsfa}
+#filter #filterButtons a#filterSelect:active{background-position: 0 -66px }
+#filter #filterButtons a#filterSelect.active{background-position: 0 -22px;}
+
+
+
+#filter a#filterBtn:hover {background-position: 0 -22px;}
+#filter a#filterBtn:active,#filter a#filterBtn.active {background-position: 0 -44px;}
+
+
+/*---------------------------------------------------
+	filters
+----------------------------------------------------*/
+
+#accordion {
+	background:#e3e3e4;
+	border:1px solid #9da0a1;
+	box-shadow:1px 1px 3px #a3a3a3;
+	-moz-box-shadow:1px 1px 3px #a3a3a3;
+	-webkit-box-shadow:1px 1px 3px #a3a3a3;
+	float:left;
+	width:153px;	
+}
+#accordion h3 a {
+	background: url("../Images/accordion-title-bg.jpg") repeat-x scroll 0 -46px transparent;
+	color: #707070;
+	display: block;
+	font: bold 11px/23px Verdana,Geneva,sans-serif;
+	height: 23px;
+	padding: 0 5px;
+	text-decoration: none;
+	text-shadow: 1px 1px #EEEEEE;
+}
+#accordion h3 a:hover,
+#accordion h3 a:active {
+	color:#677c00;
+	text-shadow:1px 1px #aacb0a;
+}
+#accordion h3 a:hover {background-position:0 -23px}
+#accordion h3 a:active {background-position:0 -69px}
+
+#accordion h3.opened a {
+	color:#666;
+	background-position: 0 0;
+	text-shadow:1px 1px #ccc;
+}
+
+
+
+#accordion ul,
+#accordion ul li {
+	list-style:none;
+	margin:0;
+	padding:0;
+	text-shadow:1px 1px #f8f8f8;
+}
+
+#accordion ul {
+	border-bottom:1px solid #9da0a1;
+	height:265px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	padding-top:10px;
+}
+
+#accordion ul li {
+	padding:5px;
+	margin-left:10px;
+}
+
+#accordion #status ul li  {	padding-left:20px;}
+#accordion #megatrends ul li {margin-left:0; float:left;}
+
+#accordion #status ul li input,
+#accordion #corporatefunctions ul li input,
+#accordion #megatrends ul li input{margin-right:5px;}
+
+
+#megatrends div,
+#megatrends input,
+#megatrends div.ellipsisNames {
+	float:left;
+}
+
+#megatrends div.ellipsisNames {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	white-space: nowrap;
+	width:93px;
+}
+
+.colorNote {
+	width:10px;
+	height:10px;
+	margin-right:5px;
+}
+
+.selectAll {
+	display:block;
+	height:25px; 
+	background:url(../Images/select-all-bg.gif) left top repeat-x;
+	padding-left:30px;
+	line-height:22px;
+	color:#000;
+}
+.selectAll input {
+	float:left;
+	margin:5px 5px 0 0;
+}
+
+
+/*---------------------------------------------------
+	Radar Status Legends
+----------------------------------------------------*/
+
+#radarLegends {
+	position:absolute;
+	right:20px;
+	top:20px;
+	text-align:right;
+	width:100px;
+
+}
+
+#radarLegends h3 {
+	line-height:24px;
+	font-weight:bold;
+}
+
+#radarLegends ul {
+	list-style:none;
+}
+
+#radarLegends ul li {
+	display:block;
+	padding:5px 20px 5px 0;
+}
+
+/*
+#radarLegends ul li#reviewLegend { background:url(../Images/status1.png) right center no-repeat; }
+#radarLegends ul li#longlistLegend { background:url(../Images/status2.png) right center no-repeat; }
+#radarLegends ul li#shortlistLegend { background:url(../Images/status3.png) right center no-repeat; }
+#radarLegends ul li#candidateLegend { background:url(../Images/status4.png) right center no-repeat; }
+#radarLegends ul li#realizationLegend { background:url(../Images/status5.png) right center no-repeat; }
+*/
+
+/*-----------------------------------------
+	radar popup
+-----------------------------------------*/
+
+#RadarDiagPopup ,
+#PlotOption{
+	display:none;
+	position:absolute;
+	width:200px;
+	height:auto;
+	background:#ebebeb;
+	padding:10px;
+	border:1px solid #666;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	box-shadow:0 0 3px #666;
+	-mox-box-shadow: 0 0 3px #666;
+	-webkit-box-shadow:0 0 3px #666;
+	color:#676767;
+	z-index:100;
+}
+
+#RadarDiagPopup #popUpHeader {
+	border-bottom:2px solid #aaa;
+	float:left;
+	width:100%;
+	padding-bottom:7px;
+	margin-bottom:7px;
+}
+
+#RadarDiagPopup div#title { 
+	font:bold 13px Arial, Helvetica, sans-serif;
+	width:100%;
+	padding-bottom:7px;
+}
+
+#RadarDiagPopup #thumbsRating {
+	display:block;
+	height:16px;
+	font-weight:bold;
+}
+
+#RadarDiagPopup #thumbsRating span,
+#RadarDiagPopup #thumbsRating img{
+	float:left;
+	line-height:16px;
+}
+#RadarDiagPopup #thumbsRating span {margin-right:10px;}
+
+#RadarDiagPopup #categories {
+	float:left;
+	margin-top:7px;
+}
+
+#RadarDiagPopup #categories > div { 
+	width:8px;
+	height:8px;
+	float:left;
+	margin-right:5px;
+	border:1px solid #fff;
+}
+
+
+#PlotOption {
+	width:auto;
+}
+
+
+#PlotOption ul,
+#PlotOption ul li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#PlotOption ul li {
+	padding:3px;
+	font-weight:bold;
+	text-transform:uppercase;
+	text-shadow:1px 1px #fff;
+	font-size:10px;
+}
+
+#PlotOption ul li:hover {
+	cursor:pointer;
+	background:#f8f8f8;
+	color:#999;
+}
+
+.HistorySlider,
+.HistorySlider .leftCorner,
+.HistorySlider .rightCorner {
+	width: 100%;
+    height: 57px;
+	display:block;
+}
+.HistorySlider
+{
+    position: absolute;
+    background:url('../images/history-Bg.png') 0 0 repeat-x;
+	top:15px;
+}
+
+.HistorySlider .leftCorner {background:url('../images/historyBg-left.jpg') left 4px no-repeat;}
+.HistorySlider .rightCorner {background:url('../images/historyBg-right.jpg') right 4px no-repeat;}
+
+.HistorySlider .Anchors,
+.HistorySlider .Handle {
+	height:18px;
+    width:15px;
+    position: absolute;
+	top:0;
+}
+.HistorySlider .Handle{	background: url('../images/anchor.png') 0 -38px no-repeat;}
+
+.HistorySlider .Anchors{   background: url('../images/anchor.png') 0 0 no-repeat;}
+
+.HistorySlider .Anchors:hover,
+.HistorySlider .Anchors:focus {background-position:0 -19px;}
+
+.HistorySlider .Scales {
+    background: url('../images/scales-bg.gif') center top no-repeat;
+    height: 38px;
+    vertical-align: bottom;
+    top: 21px;
+    position: absolute;
+    padding-top:8px;
+	font:normal normal 10px/12px Arial, Helvetica, sans-serif;
+	color:#737373;
+	text-align:center;
+}
+.HistorySlider .Scales strong {
+	font-weight:normal;
+	padding:3px;
+	display:block;
+	background:#fff;
+}
