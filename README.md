@@ -3,4 +3,4 @@ Custom interactive diagram built using HTML5 Canvas. It uses kinetics.js to draw
 
 ### Demo
 
-![Radar Diagram](https://devbkhadka.github.io/radar-diagram/images/radar-diagram.gif)
+![Radar Diagram](images/radar-diagram.gif)
